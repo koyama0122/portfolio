@@ -1,0 +1,41 @@
+header {
+    padding: 120px 0 120px 0;
+    background-image: url(images/StockSnap_WPTZMPBOF0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    color: white;
+}
+
+.logo {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 80px;
+}
+
+.logo p {
+    font-size: 50px;
+}
+
+nav {
+    height: 90px;
+    width: 900px;
+    margin: 0 auto;    
+    font-size: 25px;
+    color: black;
+}
+
+
+
+li {
+    padding: 0 50px;
+    list-style-type: none;
+    float: left;
+
+}
+
