@@ -9,6 +9,7 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
+      - run: aws s3 cp --recursive --region ap-northeast-1 build s3://koyama-portfolio
       - aws-s3/sync:
           arguments: |
             --acl public-read \
