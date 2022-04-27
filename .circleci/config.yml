@@ -29,6 +29,6 @@ workflows:
   s3-example:
     jobs:
       - build
-        filters:
+          filters:
             branches:
               only: master
