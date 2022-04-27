@@ -17,7 +17,7 @@ jobs:
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS
           from: bucket
-          to: 's3://koyama-portfolio/prefix'
+          to: 's3://koyama-portfolio'
       - aws-s3/copy:
           arguments: '--dryrun'
           from: bucket/build_asset.txt
