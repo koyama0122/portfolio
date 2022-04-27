@@ -9,7 +9,6 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
-      - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
       - aws-s3/sync:
           arguments: |
             --acl public-read \
@@ -28,7 +27,7 @@ workflows:
   version: 2
   aws-s3:
     jobs:
-      - build
+      - build:
           filters:
             branches:
               only: master
