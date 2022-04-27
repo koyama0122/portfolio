@@ -18,3 +18,12 @@ jobs:
           from: docs
           overwrite: true
           to: 's3://koyama-portfolio'
+          
+workflows:
+  version: 2
+  s3-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
