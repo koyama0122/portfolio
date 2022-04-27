@@ -9,7 +9,6 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
-      - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
       - aws-s3/sync:
           arguments: |
             --acl public-read \
@@ -23,8 +22,12 @@ jobs:
           arguments: '--dryrun'
           from: bucket/build_asset.txt
           to: 's3://koyama-portfolio'
-          
+
 workflows:
-  s3-example:
+  version: 2
+  aws-s3:
     jobs:
       - build
+          filters:
+            branches:
+              only: master
