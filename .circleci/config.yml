@@ -18,7 +18,7 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY  
-          from: portfolio
+          from: C:\Users\tkoyama\work\0501\portfolio
           to: 's3://koyama-portfolio/prefix'
 
 workflows:
