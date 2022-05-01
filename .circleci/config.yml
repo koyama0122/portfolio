@@ -1,0 +1,32 @@
+version: 2.1
+
+orbs: 
+  aws-s3: circleci/aws-s3@3.0.0
+
+jobs:
+  aws_s3:
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - checkout
+      - aws-s3/sync:
+          arguments: |
+            --acl public-read \
+            --acl bucket-owner-full-control \
+            --cache-control "max-age=86400" \
+            --delete
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY  
+          from: bucket
+          overwrite: true
+          to: 's3://koyama-portfolio/prefix'
+
+workflows:
+  version: 2
+  s3_deploy:
+    jobs:
+      - aws_s3:
+          filters:
+            branches:
+              only: master
