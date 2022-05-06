@@ -23,7 +23,7 @@ workflows:
   version: 2
   s3_deploy:
     jobs:
-      - aws_s3:
+      - build:
           filters:
             branches:
               only: master
