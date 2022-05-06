@@ -4,7 +4,7 @@ orbs:
   aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
-  aws_s3:
+  build:
     docker:
       - image: 'cimg/python:3.6'
     steps:
@@ -16,7 +16,7 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY  
-          from: .
+          from: ~/work/portfolio
           to: 's3://koyama-portfolio'
 
 workflows:
